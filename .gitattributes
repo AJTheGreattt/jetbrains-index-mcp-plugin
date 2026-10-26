@@ -1,39 +1,45 @@
 # Git Attributes ordered by specificity
 # Handle automatic conversion of CRLF to LF when committing to the repository
-*                   text=auto
+*                              text=auto
+
+# Both golden files are stored in this directory,
+# and must be parsed as raw text with LF endings
+src/test/resources/contract/** text eol=lf
 
 # There is a single *.txt file in this repo,
 # `result-shapes.txt`, and its expected to use
 # LF endings
-*.txt               text eol=lf
+# Though it's covered by the above rule,
+# this is kept for clarification sake
+*.txt                          text eol=lf
 
 # General executable line endings
-*.sh                text eol=lf
-*.bat               text eol=crlf
+*.sh                           text eol=lf
+*.bat                          text eol=crlf
 
 # javac will compile these files regardless of their line endings
 # This is a full Kotlin project, so *.java is excluded
-*.scala             text diff=java
-*.kt                text diff=kotlin
-*.kts               text diff=kotlin
+*.scala                        text diff=java
+*.kt                           text diff=kotlin
+*.kts                          text diff=kotlin
 
 # General text files may be processed indiscriminately
-*.editorconfig      text
-*.md                text
-*.json              text
-*.properties        text
-*.svg               text
-*.toml              text
-*.ts                text
-*.xml               text
+*.editorconfig                 text
+*.md                           text
+*.json                         text
+*.properties                   text
+*.svg                          text
+*.toml                         text
+*.ts                           text
+*.xml                          text
 
 # Specify both YAML formats to prevent issue in the future
-*.yaml              text
-*.yml               text
+*.yaml                         text
+*.yml                          text
 
-*.jar               binary
+*.jar                          binary
 
-gradlew             text eol=lf
+gradlew                        text eol=lf
 
-.gitattributes      export-ignore
-.gitignore          export-ignore
+.gitattributes                 export-ignore
+.gitignore                     export-ignore
