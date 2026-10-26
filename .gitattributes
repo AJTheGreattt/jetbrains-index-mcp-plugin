@@ -10,7 +10,7 @@ src/test/resources/contract/** text eol=lf
 # `result-shapes.txt`, and its expected to use
 # LF endings
 # Though it's covered by the above rule,
-# this is kept for clarification sake
+# this is kept for clarification's sake
 *.txt                          text eol=lf
 
 # General executable line endings
